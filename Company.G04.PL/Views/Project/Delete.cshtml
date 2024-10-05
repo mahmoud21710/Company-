@@ -1,0 +1,18 @@
+﻿@model ProjectViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Project</h1>
+<br />
+<form asp-action="Delete">
+    <partial name="PartialView/DeleteDetalisProjectPartialView" model="Model"></partial>
+    <br />
+    <input type="submit"  class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-success ">Back To List </a>
+</form>
+@section ValidationSection {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}

@@ -1,0 +1,14 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+ 
+<h1>Delete Employee</h1>
+<br />
+<br />
+<form asp-action="Delete">
+    <partial name="PartialViews/DeleteDetalisEmployeePartialView" model="Model"></partial>
+    <input hidden asp-for="ImageName" />
+    <input type="submit" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-success ">Back To List </a>
+</form>

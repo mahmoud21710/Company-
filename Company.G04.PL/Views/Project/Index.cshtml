@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProjectViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Projects</h1>
+<br />
+<br />
+<a asp-controller="Project" asp-action="Create" class="btn btn-primary">Start Project</a>
+<br />
+<br />
+@if(Model.Count()>0){
+    <table class="table ">
+        <thead>
+            <tr>
+            <th>@Html.DisplayNameFor(P=>P.Name)</th>
+            <th>@Html.DisplayNameFor(P => P.Location)</th>
+            <th>@Html.DisplayNameFor(P => P.City)</th>
+            <th>@Html.DisplayNameFor(P => P.Departments)</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var project in Model)
+            {
+                <tr>
+                    <td>@project.Name</td>
+                    <td>@project.Location</td>
+                    <td>@project.City</td>
+                    <td>@project.Departments?.Name</td>
+                    <partial name="PartialViews/_ButtonPartialView" model="@project.Id">
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else{
+    <div class="alert alert-danger">
+        <h4>There Is No Projects</h4>
+    </div>
+}

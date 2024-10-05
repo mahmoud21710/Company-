@@ -1,0 +1,17 @@
+﻿@model ProjectViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Start Project</h1>
+<br />
+<form asp-action="Create">
+    <partial name="PartialView/CreateEditProjectPartialView" model="Model"></partial>
+    <input type="submit" value="Create" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-success ">Back To List </a>
+</form>
+@section ValidationSection{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}

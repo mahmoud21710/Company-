@@ -1,0 +1,37 @@
+﻿@model DependentViewModel
+@{
+    var employees = new SelectList(ViewData["employees"]
+    as IEnumerable<Employee>, nameof(Employee.Id), nameof(Employee.Name));
+}
+<div class="form-group">
+    <label asp-for="Name" class="col-form-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="BirthDate" class="col-form-label"></label>
+    <input asp-for="BirthDate" class="form-control" />
+    <span asp-validation-for="BirthDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Age" class="col-form-label"></label>
+    <input asp-for="Age" class="form-control" />
+    <span asp-validation-for="Age" class="text-danger"></span>
+</div>
+<div>
+    <label asp-for="Gender" class="col-form-label"></label>
+    <select asp-for="Gender" class="form-control">
+        <option value="@null">--Select Gender--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+</div>
+<div class="form-group">
+    <label asp-for="Parent" class="col-form-label">Parent</label>
+    <select asp-for="ParentId" asp-items="employees" class="form-control">
+        <option value="@null">--Select Dependent--</option>
+    </select>
+    <span asp-validation-for="Parent" class="text-danger"></span>
+</div>
+<br />
+<br/>

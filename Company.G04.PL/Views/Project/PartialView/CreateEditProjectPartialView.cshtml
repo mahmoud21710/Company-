@@ -1,0 +1,29 @@
+﻿@model ProjectViewModel
+@{
+    var department01 = new SelectList(ViewData["department01"]
+    as IEnumerable<Department>, nameof(Department.Id), nameof(Department.Name));
+}
+<div class="form-group">
+    <label asp-for="Name" class="col-form-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Location" class="col-form-label"></label>
+    <input asp-for="Location" class="form-control" />
+    <span asp-validation-for="Location" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="City" class="col-form-label"></label>
+    <input asp-for="City" class="form-control" />
+    <span asp-validation-for="City" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Departments" class="col-form-label">Department</label>
+    <select asp-for="DepartmentsId" asp-items="department01" class="form-control">
+        <option value="@null">--Select Department--</option>
+    </select>
+    <span asp-validation-for="Departments" class="text-danger"></span>
+</div>
+<br />
+<br />
