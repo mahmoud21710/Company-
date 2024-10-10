@@ -1,0 +1,15 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Detalis";
+}
+
+<h1>User Role</h1>
+<br />
+<br />
+<div>
+    <partial name="RolePartialViews/DeleteDetalisRolePartialView" model="Model"></partial>
+    <br />
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-success ">Back To List </a>
+</div>
+

@@ -33,7 +33,7 @@
                     <td>@depe.Age</td>
                     <td>@depe.Gender</td>
                     <td>@depe.Parent?.Name</td>
-                    <partial name="PartialViews/_ButtonPartialView" model="@depe.Id">
+                    <partial name="PartialViews/_ButtonPartialView" model="@depe.Id.ToString()">
                 </tr>
             }
         </tbody>

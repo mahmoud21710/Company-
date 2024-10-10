@@ -137,7 +137,7 @@ namespace Company.G04.PL.Controllers
 				if (user is not null)
 				{
 					//Generate Token
-					var token = _userManager.GeneratePasswordResetTokenAsync(user).GetAwaiter();
+					var token = _userManager.GeneratePasswordResetTokenAsync(user).GetAwaiter().GetResult();
 
 					//Create Reset Password URL 
 					var url = Url.Action("ResetPassword",
@@ -204,7 +204,14 @@ namespace Company.G04.PL.Controllers
 			ModelState.AddModelError(string.Empty, "Invalid Operation");
 			return View(model);
 		} 
-		#endregion
+
+		
+		#endregion 
+
+		public IActionResult AccessDenied() 
+		{
+			return View();
+		}
 
 	}
 

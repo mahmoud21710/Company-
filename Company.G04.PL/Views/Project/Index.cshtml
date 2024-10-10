@@ -30,7 +30,7 @@
                     <td>@project.Location</td>
                     <td>@project.City</td>
                     <td>@project.Departments?.Name</td>
-                    <partial name="PartialViews/_ButtonPartialView" model="@project.Id">
+                    <partial name="PartialViews/_ButtonPartialView" model="@project.Id.ToString()">
                 </tr>
             }
         </tbody>

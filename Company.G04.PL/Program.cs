@@ -43,9 +43,8 @@ namespace Company.G04.PL
             builder.Services.ConfigureApplicationCookie(config =>
             { 
                 config.LoginPath = "/Account/SignIn" ;
-
-                //config.Cookie
-            });
+          				//config.Cookie
+			});
 
             var app = builder.Build();
 
